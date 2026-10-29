@@ -1,0 +1,95 @@
+<header class="site-header">
+
+  <div class="topbar">
+    <div class="container-nawa topbar__inner">
+      <a class="topbar__welcome" href="{{ root }}index.html">
+        <span class="topbar__welcome-text">أهلا بك في</span>
+        <img class="topbar__logo-text" src="{{ root }}assets/images/logo-text-white.png" alt="نواة">
+        <img class="topbar__logo-mark" src="{{ root }}assets/images/logo-mark-white.png" alt="">
+      </a>
+
+      <div class="topbar__guest" data-auth-only="guest">
+        <a class="topbar__link" href="{{ root }}auth/login.html">تسجيل الدخول</a>
+        <a class="topbar__cta" href="{{ root }}auth/signup.html">إنشاء حساب</a>
+      </div>
+
+      <div class="topbar__actions" data-auth-only="user">
+        <a class="icon-btn" href="{{ root }}support/support-detail.html" aria-label="الرسائل">
+          <svg class="icon" aria-hidden="true"><use href="#mail"></use></svg>
+          <span class="icon-btn__dot"></span>
+        </a>
+        <a class="icon-btn" href="{{ root }}account/notifications.html" aria-label="الإشعارات">
+          <svg class="icon" aria-hidden="true"><use href="#bell"></use></svg>
+          <span class="icon-btn__dot"></span>
+        </a>
+
+        <div class="dropdown">
+          <button class="user-menu" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="قائمة المستخدم">
+            <img class="user-menu__avatar" src="{{ root }}assets/images/avatar.jpg" alt="">
+            <svg class="icon icon--sm" aria-hidden="true"><use href="#chevron-down"></use></svg>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-nawa">
+            <li><a class="dropdown-item" href="{{ root }}account/dashboard.html">لوحة التحكم</a></li>
+            <li><a class="dropdown-item" href="{{ root }}requests/requests.html">طلباتي</a></li>
+            <li><a class="dropdown-item" href="{{ root }}wallet/wallet.html">المحفظة</a></li>
+            <li><a class="dropdown-item" href="{{ root }}account/profile.html">الملف الشخصي</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ root }}index.html" data-logout>تسجيل الخروج</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mainbar">
+    <div class="container-nawa mainbar__inner">
+      <div class="mainbar__brand">
+        <button class="menu-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#siteMenu" aria-controls="siteMenu" aria-label="القائمة">
+          <svg class="icon" aria-hidden="true"><use href="#menu"></use></svg>
+        </button>
+        <a class="brand" href="{{ root }}index.html" aria-label="نواة الرئيسية">
+          <img class="brand__text" src="{{ root }}assets/images/logo-text-dark.png" alt="نواة">
+          <img class="brand__mark" src="{{ root }}assets/images/logo-mark-dark.png" alt="">
+        </a>
+      </div>
+
+      <form class="search-box" action="{{ root }}inventions/inventions.html" method="get" role="search" data-search>
+        <input class="search-box__input" type="search" name="q" placeholder="ابحث عن ماذا تريد ؟" aria-label="بحث">
+        <button class="search-box__btn" type="submit" aria-label="بحث">
+          <svg class="icon" aria-hidden="true"><use href="#search"></use></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-start offcanvas-nawa" tabindex="-1" id="siteMenu" aria-labelledby="siteMenuLabel">
+    <div class="offcanvas-header">
+      <a class="brand" href="{{ root }}index.html" id="siteMenuLabel">
+        <img class="brand__text" src="{{ root }}assets/images/logo-text-dark.png" alt="نواة">
+        <img class="brand__mark" src="{{ root }}assets/images/logo-mark-dark.png" alt="">
+      </a>
+      <button type="button" class="offcanvas-close" data-bs-dismiss="offcanvas" aria-label="إغلاق">
+        <svg class="icon" aria-hidden="true"><use href="#close"></use></svg>
+      </button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="side-nav">
+        <a class="side-nav__link" href="{{ root }}index.html" data-nav="home">الرئيسية</a>
+        <a class="side-nav__link" href="{{ root }}inventions/inventions.html" data-nav="inventions">الاختراعات</a>
+        <a class="side-nav__link" href="{{ root }}index.html#paths">للمخترعين والمستثمرين</a>
+        <a class="side-nav__link" href="{{ root }}index.html#how">كيف تعمل نواة</a>
+        <a class="side-nav__link" href="{{ root }}map.html" data-nav="map">دليل الصفحات</a>
+        <a class="side-nav__link" href="{{ root }}support/support-new.html">تواصل معنا</a>
+      </nav>
+
+      <div class="side-nav__auth" data-auth-only="guest">
+        <a class="btn-gradient w-100" href="{{ root }}auth/signup.html">إنشاء حساب</a>
+        <a class="side-nav__secondary" href="{{ root }}auth/login.html">لديك حساب؟ تسجيل الدخول</a>
+      </div>
+      <div class="side-nav__auth" data-auth-only="user">
+        <a class="btn-gradient w-100" href="{{ root }}account/dashboard.html">لوحة التحكم</a>
+        <a class="side-nav__secondary" href="{{ root }}index.html" data-logout>تسجيل الخروج</a>
+      </div>
+    </div>
+  </div>
+</header>

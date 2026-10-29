@@ -1,0 +1,39 @@
+<article class="invention-card">
+  <a class="invention-card__media" href="{{ url }}">
+    <img src="{{ image }}" alt="{{ title }}" loading="lazy">
+  </a>
+
+  <h3 class="invention-card__title"><a href="{{ url }}">{{ title }}</a></h3>
+  <p class="invention-card__desc">{{ description }}</p>
+
+  <dl class="invention-card__stats">
+    <div class="stat">
+      <dt>قيمة الاستثمار المطلوبة</dt>
+      <dd>({{ required }} ريال)</dd>
+    </div>
+    <div class="stat">
+      <dt>اجمالي الاستثمار</dt>
+      <dd>({{ total }}%)</dd>
+    </div>
+    <div class="stat">
+      <dt>الحد الأدنى</dt>
+      <dd>({{ min }} ريال)</dd>
+    </div>
+    <div class="stat">
+      <dt>الحد الأقصى</dt>
+      <dd>({{ max }} ريال)</dd>
+    </div>
+  </dl>
+
+  <div class="funding">
+    <div class="funding__labels">
+      <span>{{ raised }} ريال</span>
+      <span>{{ percent }}%</span>
+    </div>
+    <div class="funding__track" role="progressbar" aria-label="نسبة التمويل" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ percent }}" data-progress="{{ percent }}">
+      <span class="funding__bar"></span>
+    </div>
+  </div>
+
+  <a class="btn-gradient invention-card__cta" href="{{ url }}">رؤية المزيد</a>
+</article>

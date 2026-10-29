@@ -1,0 +1,53 @@
+:root {
+  --nw-navy: #1b2b4b;
+  --nw-navy-900: #192b49;
+  --nw-blue: #3c67af;
+  --nw-blue-50: #eaf1fb;
+  --nw-ink: #141b34;
+  --nw-text: #1b2b4b;
+  --nw-text-body: #475467;
+  --nw-text-muted: #667085;
+  --nw-text-soft: #8a8f99;
+  --nw-border: #e4e7ec;
+  --nw-border-soft: #dfdfdf;
+  --nw-surface: #ffffff;
+  --nw-surface-muted: #f2f2f2;
+  --nw-page-bg: #fcfcfd;
+  --nw-track: #e4e7ec;
+  --nw-white-60: rgba(255, 255, 255, 0.6);
+  --nw-icon-muted: #d9d9d9;
+
+  --nw-gradient: linear-gradient(90deg, #1b2b4b 0%, #3c67af 100%);
+
+  --nw-font: "Tajawal", "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --nw-font-latin: "Poppins", "Tajawal", system-ui, sans-serif;
+
+  --nw-container: 1240px;
+  --nw-gutter: 16px;
+  --nw-topbar-h: 66px;
+  --nw-grid-gap: 61px;
+
+  --nw-radius-xs: 4px;
+  --nw-radius-sm: 8px;
+  --nw-radius-pill: 100px;
+  --nw-shadow-card: 0 4px 30px rgba(16, 24, 40, 0.06);
+  --nw-shadow-pop: 0 12px 32px rgba(16, 24, 40, 0.12);
+
+  --nw-transition: 0.2s ease;
+
+  --ux-bg-canvas: #fafafa;
+  --ux-bg-surface: #ffffff;
+  --ux-bg-brand: #192b49;
+  --ux-bg-brand-hover: #24406c;
+  --ux-bg-subtle: #edf3ff;
+  --ux-border: #dde4ef;
+  --ux-text-primary: #192b49;
+  --ux-text-secondary: #596579;
+  --ux-text-inverse: #ffffff;
+  --ux-text-success: #166648;
+  --ux-text-danger: #b42318;
+  --ux-accent: #3c67af;
+  --ux-radius: 8px;
+  --ux-control-h: 48px;
+  --ux-font-nav: "Cairo", "Tajawal", system-ui, sans-serif;
+}

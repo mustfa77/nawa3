@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>المكونات | نواة</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;500;600&family=Tajawal:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/account.css">
+
+  <style>
+    .demo-top {
+      padding-block: 40px 28px;
+      background: var(--nw-gradient);
+      color: #fff;
+    }
+
+    .demo-top h1 {
+      margin: 0 0 6px;
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    .demo-top p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .demo-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+      background-color: #fff;
+      border-bottom: 1px solid var(--nw-border);
+    }
+
+    .demo-nav ul {
+      display: flex;
+      gap: 6px;
+      margin: 0;
+      padding: 12px 0;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .demo-nav a {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: var(--nw-radius-pill);
+      background-color: var(--nw-blue-50);
+      color: var(--nw-navy);
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .demo-nav a:hover {
+      background-color: var(--nw-navy);
+      color: #fff;
+    }
+
+    .demo-section {
+      padding-block: 44px 4px;
+      scroll-margin-top: 64px;
+    }
+
+    .demo-section > h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--nw-navy);
+    }
+
+    .demo-box {
+      padding: 24px;
+      border: 1px solid var(--nw-border);
+      border-radius: var(--nw-radius-sm);
+      background-color: #fff;
+    }
+
+    .demo-box + .demo-box {
+      margin-top: 16px;
+    }
+
+    .demo-box--flush {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .demo-box--gray {
+      background-color: var(--ux-bg-canvas);
+    }
+
+    .demo-name {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--nw-text-soft);
+    }
+
+    .demo-box--flush > .demo-name {
+      margin: 0;
+      padding: 12px 16px;
+    }
+
+    .demo-name code {
+      margin-inline-start: 6px;
+      font-weight: 400;
+      color: var(--nw-blue);
+      direction: ltr;
+      unicode-bidi: embed;
+    }
+
+    .demo-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .demo-color {
+      width: 130px;
+      font-size: 13px;
+    }
+
+    .demo-color span {
+      display: block;
+      height: 60px;
+      margin-bottom: 8px;
+      border: 1px solid var(--nw-border);
+      border-radius: var(--nw-radius-sm);
+    }
+
+    .demo-color code {
+      color: var(--nw-text-muted);
+    }
+
+    .demo-icon {
+      width: 88px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 4px;
+      border-radius: var(--nw-radius-sm);
+      background-color: var(--nw-page-bg);
+      color: var(--nw-navy);
+      font-size: 11px;
+      direction: ltr;
+    }
+
+    .demo-frame {
+      display: block;
+      width: 100%;
+      height: 820px;
+      border: 0;
+    }
+
+    .demo-frame-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--nw-border);
+      background-color: var(--nw-page-bg);
+    }
+
+    body .as-user [data-auth-only="user"] {
+      display: flex !important;
+    }
+
+    body .as-user [data-auth-only="guest"] {
+      display: none !important;
+    }
+
+    @media (max-width: 575.98px) {
+      .demo-box {
+        padding: 16px;
+      }
+
+      .demo-frame {
+        height: 640px;
+      }
+    }
+  </style>
+</head>
+<body data-auth="guest" data-page="components">
+  <a class="visually-hidden-focusable" href="#main">تخطى إلى المحتوى</a>
+
+  <div class="demo-top">
+    <div class="container-nawa">
+      <h1>مكونات كل الصفحات</h1>
+      <p>من أزرار ومدخلات وألوان</p>
+      <p>المكونات: HTML و CSS</p>
+    </div>
+  </div>
+
+  <nav class="demo-nav" aria-label="الأقسام">
+    <div class="container-nawa">
+      <ul>
+        <li><a href="#colors">الألوان</a></li>
+        <li><a href="#header">الهيدر</a></li>
+        <li><a href="#footer">الفوتر</a></li>
+        <li><a href="#buttons">الأزرار</a></li>
+        <li><a href="#inputs">الحقول</a></li>
+        <li><a href="#nav">التنقل</a></li>
+        <li><a href="#cards">البطاقات</a></li>
+        <li><a href="#panels">اللوحات</a></li>
+        <li><a href="#tables">الجداول</a></li>
+        <li><a href="#icons">الأيقونات</a></li>
+        <li><a href="#inventions">صفحة الاختراعات</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main" class="site-main">
+    <div class="container-nawa">
+
+      <section class="demo-section" id="colors">
+        <h2>الألوان</h2>
+        <div class="demo-box">
+          <div class="demo-row">
+            <div class="demo-color"><span style="background:var(--nw-navy)"></span>كحلي<br><code>#1b2b4b</code></div>
+            <div class="demo-color"><span style="background:var(--nw-blue)"></span>أزرق<br><code>#3c67af</code></div>
+            <div class="demo-color"><span style="background:var(--nw-blue-50)"></span>أزرق فاتح<br><code>#eaf1fb</code></div>
+            <div class="demo-color"><span style="background:var(--nw-gradient)"></span>التدرج<br><code>gradient</code></div>
+            <div class="demo-color"><span style="background:var(--nw-text-body)"></span>النص<br><code>#475467</code></div>
+            <div class="demo-color"><span style="background:var(--nw-border)"></span>الحدود<br><code>#e4e7ec</code></div>
+            <div class="demo-color"><span style="background:var(--ux-text-success)"></span>نجاح<br><code>#166648</code></div>
+            <div class="demo-color"><span style="background:var(--ux-text-danger)"></span>خطأ<br><code>#b42318</code></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="header">
+        <h2>الهيدر</h2>
+
+        <div class="demo-box demo-box--flush">
+          <span class="demo-name">هيدر الموقع (زائر)</span>
+          <div data-include="partials/header.html"></div>
+        </div>
+
+        <div class="demo-box demo-box--flush as-user">
+          <span class="demo-name">هيدر الموقع (مسجل دخول)</span>
+          <div data-include="partials/header.html"></div>
+        </div>
+
+        <div class="demo-box demo-box--flush">
+          <span class="demo-name">هيدر الحساب (زائر)</span>
+          <div data-include="partials/header-account.html"></div>
+        </div>
+
+        <div class="demo-box demo-box--flush as-user">
+          <span class="demo-name">هيدر الحساب (مسجل دخول)</span>
+          <div data-include="partials/header-account.html"></div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="footer">
+        <h2>الفوتر</h2>
+        <div class="demo-box demo-box--flush">
+          <span class="demo-name">الفوتر</span>
+          <div data-include="partials/footer.html"></div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="buttons">
+        <h2>الأزرار</h2>
+
+        <div class="demo-box">
+          <span class="demo-name">أزرار الموقع<code>.btn-gradient .btn-pill .btn-square</code></span>
+          <div class="demo-row">
+            <button class="btn-gradient" type="button">استثمر الآن</button>
+            <span class="p-2 rounded" style="background:var(--nw-navy)"><a class="btn-pill" href="#">ابدأ الآن مجانًا</a></span>
+            <button class="btn-square" type="button" aria-label="تصفية">
+              <svg class="icon" aria-hidden="true"><use href="#filter"></use></svg>
+            </button>
+            <button class="btn-square" type="button" aria-label="القائمة">
+              <svg class="icon" aria-hidden="true"><use href="#menu"></use></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="demo-box">
+          <span class="demo-name">أزرار الحساب<code>.btn-ux--primary .btn-ux--secondary</code></span>
+          <div class="demo-row">
+            <button class="btn-ux btn-ux--primary" type="button">متابعة</button>
+            <button class="btn-ux btn-ux--secondary" type="button">رجوع</button>
+            <button class="btn-ux btn-ux--primary" type="button" disabled>متابعة</button>
+            <button class="btn-ux btn-ux--secondary" type="button" disabled>رجوع</button>
+            <button class="btn-ux btn-ux--primary btn-ux--wide" type="button" data-toast="تم الحفظ">حفظ كمسودة</button>
+          </div>
+        </div>
+
+        <div class="demo-box">
+          <span class="demo-name">زرين جنب بعض<code>.btn-row</code></span>
+          <div class="btn-row">
+            <button class="btn-ux btn-ux--primary" type="button">إرسال الطلب</button>
+            <button class="btn-ux btn-ux--secondary" type="button">إلغاء</button>
+          </div>
+        </div>
+
+        <div class="demo-box">
+          <span class="demo-name">التقييم<code>.choice</code></span>
+          <div class="btn-row btn-row--start btn-row--rating" role="radiogroup" aria-label="التقييم">
+            <label class="choice"><input type="radio" name="demoRating" value="5" checked><span class="btn-ux">★ 5</span></label>
+            <label class="choice"><input type="radio" name="demoRating" value="4"><span class="btn-ux">★ 4</span></label>
+            <label class="choice"><input type="radio" name="demoRating" value="3"><span class="btn-ux">★ 3</span></label>
+            <label class="choice"><input type="radio" name="demoRating" value="2"><span class="btn-ux">★ 2</span></label>
+            <label class="choice"><input type="radio" name="demoRating" value="1"><span class="btn-ux">★ 1</span></label>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="inputs">
+        <h2>الحقول</h2>
+
+        <form class="demo-box demo-box--gray" action="#" method="get" data-validate onsubmit="return false">
+          <span class="demo-name">حقول النماذج<code>.field-ux</code></span>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="field-ux">
+                <label class="field-ux__label" for="dName">الاسم الكامل *</label>
+                <input class="field-ux__control" id="dName" type="text" placeholder="اكتب اسمك" required>
+                <p class="field-ux__help">كما في الهوية</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field-ux">
+                <label class="field-ux__label" for="dEmail">البريد الإلكتروني *</label>
+                <input class="field-ux__control" id="dEmail" type="email" placeholder="name@example.com" required>
+                <p class="field-ux__help"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field-ux">
+                <label class="field-ux__label" for="dPhone">رقم الجوال</label>
+                <input class="field-ux__control" id="dPhone" type="tel" placeholder="05xxxxxxxx">
+                <p class="field-ux__help"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field-ux">
+                <label class="field-ux__label" for="dCat">التصنيف *</label>
+                <select class="field-ux__control" id="dCat" required>
+                  <option value="" selected disabled>اختر</option>
+                  <option>تقنية</option>
+                  <option>تجارة إلكترونية</option>
+                  <option>ذكاء اصطناعي</option>
+                </select>
+                <p class="field-ux__help"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field-ux">
+                <label class="field-ux__label" for="dCode">رمز التحقق</label>
+                <input class="field-ux__control field-ux__control--code" id="dCode" type="text" inputmode="numeric" maxlength="6" placeholder="------">
+                <p class="field-ux__help"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field-ux is-invalid">
+                <label class="field-ux__label" for="dErr">حقل فيه خطأ</label>
+                <input class="field-ux__control" id="dErr" type="text" value="12">
+                <p class="field-ux__help">هذا الحقل مطلوب</p>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="field-ux">
+                <label class="field-ux__label" for="dDesc">الوصف</label>
+                <textarea class="field-ux__control" id="dDesc" rows="3" placeholder="اكتب وصف الاختراع"></textarea>
+                <p class="field-ux__help"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field-ux">
+                <span class="field-ux__label" id="dFileLabel">رفع ملف</span>
+                <label class="field-ux__control file-drop" data-file-drop>
+                  <input type="file" aria-labelledby="dFileLabel">
+                  <span data-file-label>↑  اختر ملفًا أو اسحبه هنا</span>
+                </label>
+                <p class="field-ux__help"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field-ux">
+                <span class="field-ux__label">المبلغ</span>
+                <div class="field-ux__pair">
+                  <input class="field-ux__control" type="number" placeholder="من" aria-label="من">
+                  <input class="field-ux__control" type="number" placeholder="إلى" aria-label="إلى">
+                </div>
+                <p class="field-ux__help"></p>
+              </div>
+            </div>
+          </div>
+          <div class="btn-row mt-4">
+            <button class="btn-ux btn-ux--primary" type="submit">إرسال</button>
+          </div>
+        </form>
+
+        <div class="demo-box">
+          <span class="demo-name">البحث<code>.search-box</code></span>
+          <form class="search-box" action="#" role="search" onsubmit="return false">
+            <input class="search-box__input" type="search" placeholder="ابحث عن ماذا تريد ؟" aria-label="بحث">
+            <button class="search-box__btn" type="submit" aria-label="بحث">
+              <svg class="icon" aria-hidden="true"><use href="#search"></use></svg>
+            </button>
+          </form>
+        </div>
+
+        <div class="demo-box filter-panel">
+          <span class="demo-name">عناصر الفلتر<code>.form-check .form-control .form-range</code></span>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="dCheck1" checked>
+                <label class="form-check-label" for="dCheck1">تقنية</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="dCheck2">
+                <label class="form-check-label" for="dCheck2">ألعاب</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <input class="form-control" type="number" placeholder="الحد الأدنى" aria-label="الحد الأدنى">
+            </div>
+            <div class="col-md-4">
+              <input class="form-range" type="range" min="0" max="100" step="10" value="40" aria-label="نسبة التمويل">
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-box">
+          <span class="demo-name">قائمة الترتيب<code>.select-nawa</code></span>
+          <div class="dropdown select-nawa" data-select="demoSort">
+            <button class="select-nawa__toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span data-select-label>الأحدث</span>
+              <svg class="icon" aria-hidden="true"><use href="#arrow-down"></use></svg>
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item active" type="button" data-value="latest" aria-selected="true">الأحدث</button></li>
+              <li><button class="dropdown-item" type="button" data-value="high">الأعلى</button></li>
+              <li><button class="dropdown-item" type="button" data-value="low">الأقل</button></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="nav">
+        <h2>التنقل</h2>
+
+        <div class="demo-box demo-box--flush">
+          <span class="demo-name">رأس الصفحة الداخلية</span>
+          <div data-include="partials/page-header.html"
+               data-props='{"title":"الاختراعات","parent":"الرئيسية","parent_url":"#"}'>
+            <button slot="tools" class="btn-square" type="button" aria-label="تصفية">
+              <svg class="icon" aria-hidden="true"><use href="#filter"></use></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="demo-box">
+          <span class="demo-name">عنوان الشاشة</span>
+          <div data-include="partials/screen-head.html"
+               data-props='{"breadcrumb":"حسابي  /  إضافة اختراع","title":"إضافة اختراع","description":"عبّي بيانات الاختراع وارفع مستند البراءة."}'></div>
+        </div>
+
+        <div class="demo-box">
+          <span class="demo-name">قائمة الحساب</span>
+          <div data-include="partials/account-nav.html"></div>
+        </div>
+
+        <div class="demo-box">
+          <span class="demo-name">الخطوات<code>.steps</code></span>
+          <ol class="steps" data-steps='["بيانات الحساب","رمز التحقق","الهوية","الملف الشخصي"]' data-current="2"></ol>
+        </div>
+
+        <div class="demo-box">
+          <span class="demo-name">أرقام الصفحات</span>
+          <div data-include="partials/components/pagination.html"></div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="cards">
+        <h2>البطاقات</h2>
+        <div class="demo-box demo-box--gray">
+          <span class="demo-name">بطاقة الاختراع</span>
+          <div class="row cards-grid row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <div class="col">
+              <div data-include="partials/components/invention-card.html"
+                   data-props='{"image":"assets/images/invention-ecommerce.png","title":"منصة تجارة الكترونية","description":"منصة تجارة إلكترونية متطورة تعتمد على تقنيات الذكاء الاصطناعي لتحسين تجربة البيع والشراء.","required":"700,000","total":"60","min":"100,000","max":"700,000","raised":"420,000","percent":"60","url":"inventions.html"}'></div>
+            </div>
+            <div class="col">
+              <div data-include="partials/components/invention-card.html"
+                   data-props='{"image":"assets/images/invention-controller.jpg","title":"وحدة تحكم الألعاب","description":"استخدم 16 مدخلاً بأصابعك السبابة متعددة الاستخدامات. نفّذ حركات معقدة دون رفع إبهاميك عن عصا التحكم.","required":"500,000","total":"30","min":"50,000","max":"500,000","raised":"150,000","percent":"30","url":"inventions.html"}'></div>
+            </div>
+            <div class="col">
+              <div data-include="partials/components/invention-card.html"
+                   data-props='{"image":"assets/images/invention-music.jpg","title":"منصة موسيقى AI","description":"منصة تتدفق فيها الإبداعات دون عوائق بفضل الذكاء الاصطناعي.","required":"900,000","total":"85","min":"100,000","max":"900,000","raised":"765,000","percent":"85","url":"inventions.html"}'></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="panels">
+        <h2>اللوحات</h2>
+
+        <div class="demo-box demo-box--gray">
+          <span class="demo-name">اللوحات<code>.panel-ux</code></span>
+          <div class="panel-grid">
+            <div class="panel-ux">
+              <h3 class="panel-ux__title">بيانات الطلب</h3>
+              <p class="panel-ux__text">رقم الطلب 1042، أُرسل يوم 12 سبتمبر.</p>
+              <button class="btn-ux btn-ux--primary btn-ux--start" type="button">عرض التفاصيل</button>
+            </div>
+            <div class="panel-ux panel-ux--info">
+              <h3 class="panel-ux__title">ملاحظة</h3>
+              <p class="panel-ux__text">المراجعة تاخذ من يومين إلى خمسة أيام عمل.</p>
+            </div>
+            <div class="panel-ux">
+              <h3 class="panel-ux__title panel-ux__title--success">تم نشر الاختراع</h3>
+              <p class="panel-ux__text">اختراعك الآن ظاهر للمستثمرين.</p>
+            </div>
+            <div class="panel-ux">
+              <h3 class="panel-ux__title panel-ux__title--danger">تم رفض الطلب</h3>
+              <p class="panel-ux__text">مستند البراءة غير واضح.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-box demo-box--gray">
+          <span class="demo-name">الرصيد<code>.balance-ux</code></span>
+          <div class="panel-grid panel-grid--3">
+            <div class="panel-ux balance-ux--primary">
+              <p class="balance-ux__label">الرصيد المتاح</p>
+              <p class="balance-ux__amount">24,500 ر.س</p>
+            </div>
+            <div class="panel-ux">
+              <p class="balance-ux__label">المحجوز</p>
+              <p class="balance-ux__amount">8,000 ر.س</p>
+            </div>
+            <div class="panel-ux">
+              <p class="balance-ux__label">إجمالي الاستثمار</p>
+              <p class="balance-ux__amount">120,000 ر.س</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-box demo-box--gray">
+          <span class="demo-name">سجل الطلب والردود<code>.timeline-ux .thread-ux</code></span>
+          <div class="panel-grid">
+            <div class="panel-ux">
+              <ul class="timeline-ux">
+                <li class="is-done">تم إرسال الطلب</li>
+                <li class="is-done">المراجعة الأولية</li>
+                <li class="is-current">التقييم</li>
+                <li class="is-pending">النشر</li>
+              </ul>
+            </div>
+            <div class="panel-ux">
+              <ul class="thread-ux">
+                <li class="thread-ux__msg">
+                  <p class="thread-ux__meta"><strong>أنت</strong> · 10:30 ص</p>
+                  <p class="thread-ux__text">المبلغ ما نزل في المحفظة.</p>
+                </li>
+                <li class="thread-ux__msg thread-ux__msg--team">
+                  <p class="thread-ux__meta"><strong>الدعم</strong> · 11:05 ص</p>
+                  <p class="thread-ux__text">نراجع طلبك ونرد عليك اليوم.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="tables">
+        <h2>الجداول والحالات</h2>
+
+        <div class="demo-box">
+          <span class="demo-name">الحالة<code>.badge-ux</code></span>
+          <div class="demo-row">
+            <span class="badge-ux">جديد</span>
+            <span class="badge-ux badge-ux--success">مدفوع</span>
+            <span class="badge-ux badge-ux--warning">قيد المعالجة</span>
+            <span class="badge-ux badge-ux--info">محجوز</span>
+          </div>
+        </div>
+
+        <div class="demo-box">
+          <span class="demo-name">جدول الحركات<code>.tx-list</code></span>
+          <table class="tx-list">
+            <thead>
+              <tr><th scope="col">التاريخ</th><th scope="col">المرجع</th><th scope="col">النوع</th><th scope="col">المبلغ</th><th scope="col">الحالة</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>16 سبتمبر</td>
+                <td class="tx-list__ref">PAY-1042</td>
+                <td>استثمار جزئي</td>
+                <td class="tx-list__amount">10,115 ر.س</td>
+                <td><span class="badge-ux badge-ux--success">مدفوع</span></td>
+              </tr>
+              <tr>
+                <td>14 سبتمبر</td>
+                <td class="tx-list__ref">WDR-1031</td>
+                <td>سحب</td>
+                <td class="tx-list__amount">2,000 ر.س</td>
+                <td><span class="badge-ux badge-ux--warning">قيد المعالجة</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="demo-box">
+          <span class="demo-name">التفاصيل<code>.detail-list</code></span>
+          <dl class="detail-list">
+            <dt>رقم العملية</dt><dd>PAY-1042</dd>
+            <dt>المبلغ</dt><dd>10,115 ر.س</dd>
+            <dt>الحالة</dt><dd><span class="badge-ux badge-ux--success">مدفوع</span></dd>
+          </dl>
+        </div>
+      </section>
+
+      <section class="demo-section" id="icons">
+        <h2>الأيقونات</h2>
+        <div class="demo-box">
+          <span class="demo-name">الأيقونات</span>
+          <div class="demo-row" data-icons></div>
+        </div>
+      </section>
+
+      <section class="demo-section pb-5" id="inventions">
+        <h2>صفحة الاختراعات</h2>
+        <div class="demo-box demo-box--flush">
+          <div class="demo-frame-bar">
+            <span class="demo-name m-0">معاينة</span>
+            <a class="btn-gradient" href="inventions.html">فتح الصفحة</a>
+          </div>
+          <iframe class="demo-frame" src="inventions.html" title="صفحة الاختراعات" loading="lazy"></iframe>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/partials.js"></script>
+  <script src="assets/js/core/include.js"></script>
+  <script src="assets/js/components/header.js"></script>
+  <script src="assets/js/components/progress.js"></script>
+  <script src="assets/js/components/select-dropdown.js"></script>
+  <script src="assets/js/components/steps.js"></script>
+  <script src="assets/js/components/file-drop.js"></script>
+  <script src="assets/js/components/forms.js"></script>
+  <script src="assets/js/components/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('app:ready', () => {
+      const box = document.querySelector('[data-icons]');
+      document.querySelectorAll('#nawa-sprite symbol[id]').forEach((s) => {
+        box.insertAdjacentHTML('beforeend',
+          `<div class="demo-icon"><svg class="icon" aria-hidden="true"><use href="#${s.id}"></use></svg>${s.id}</div>`);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<aside class="offcanvas offcanvas-start app-sidebar" tabindex="-1" id="appSidebar" aria-labelledby="appSidebarLabel">
+  <div class="offcanvas-header">
+    <span class="app-sidebar__heading" id="appSidebarLabel">حسابي</span>
+    <button type="button" class="offcanvas-close" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="إغلاق">
+      <svg class="icon" aria-hidden="true"><use href="#close"></use></svg>
+    </button>
+  </div>
+
+  <div class="offcanvas-body">
+    <div class="app-sidebar__panel">
+      <a class="app-user" href="{{ root }}account/profile.html">
+        <img class="app-user__avatar" src="{{ root }}assets/images/avatar-user.png" alt="" width="48" height="48">
+        <span class="app-user__info">
+          <strong class="app-user__name">يوسف سلمان</strong>
+          <span class="app-user__role">مخترع • مستثمر</span>
+        </span>
+      </a>
+      <a class="app-user__switch" href="{{ root }}account/roles-approved.html">تبديل الدور</a>
+
+      <nav class="app-nav" aria-label="قائمة الحساب">
+        <div class="app-nav__group">
+          <a class="app-nav__link" href="{{ root }}account/dashboard.html" data-nav="dashboard">
+            <svg class="icon" aria-hidden="true"><use href="#grid"></use></svg>لوحة التحكم
+          </a>
+          <a class="app-nav__link" href="{{ root }}account/notifications.html" data-nav="notifications">
+            <svg class="icon" aria-hidden="true"><use href="#bell-line"></use></svg>الإشعارات
+            <span class="app-nav__count">5</span>
+          </a>
+        </div>
+
+        <div class="app-nav__group">
+          <p class="app-nav__title">الاختراعات</p>
+          <a class="app-nav__link" href="{{ root }}requests/requests.html" data-nav="requests">
+            <svg class="icon" aria-hidden="true"><use href="#file-check"></use></svg>طلباتي
+          </a>
+          <a class="app-nav__link" href="{{ root }}inventions/invention-new.html" data-nav="invention-new">
+            <svg class="icon" aria-hidden="true"><use href="#bulb"></use></svg>إضافة اختراع
+          </a>
+          <a class="app-nav__link" href="{{ root }}inventions/inventions.html" data-nav="explore">
+            <svg class="icon" aria-hidden="true"><use href="#search-line"></use></svg>تصفح الفرص
+          </a>
+        </div>
+
+        <div class="app-nav__group">
+          <p class="app-nav__title">المعاملات</p>
+          <a class="app-nav__link" href="{{ root }}contracts/contract.html" data-nav="contracts">
+            <svg class="icon" aria-hidden="true"><use href="#contract"></use></svg>العقود
+          </a>
+          <a class="app-nav__link" href="{{ root }}wallet/wallet.html" data-nav="wallet">
+            <svg class="icon" aria-hidden="true"><use href="#wallet"></use></svg>المحفظة
+          </a>
+        </div>
+
+        <div class="app-nav__group">
+          <p class="app-nav__title">الحساب</p>
+          <a class="app-nav__link" href="{{ root }}account/profile.html" data-nav="profile">
+            <svg class="icon" aria-hidden="true"><use href="#user"></use></svg>الملف الشخصي
+          </a>
+          <a class="app-nav__link" href="{{ root }}account/roles.html" data-nav="roles">
+            <svg class="icon" aria-hidden="true"><use href="#shield-check"></use></svg>الأدوار ونوع الحساب
+          </a>
+          <a class="app-nav__link" href="{{ root }}support/support-new.html" data-nav="support">
+            <svg class="icon" aria-hidden="true"><use href="#message"></use></svg>الدعم والشكاوى
+          </a>
+        </div>
+
+        <div class="app-nav__group app-nav__group--site">
+          <p class="app-nav__title">الموقع</p>
+          <a class="app-nav__link" href="{{ root }}index.html">
+            <svg class="icon" aria-hidden="true"><use href="#chart-up"></use></svg>الرئيسية
+          </a>
+          <a class="app-nav__link" href="{{ root }}map.html">
+            <svg class="icon" aria-hidden="true"><use href="#check-circle"></use></svg>دليل الصفحات
+          </a>
+        </div>
+
+        <a class="app-nav__link app-nav__link--logout" href="{{ root }}index.html" data-logout>
+          <svg class="icon" aria-hidden="true"><use href="#logout"></use></svg>تسجيل الخروج
+        </a>
+      </nav>
+    </div>
+  </div>
+</aside>
